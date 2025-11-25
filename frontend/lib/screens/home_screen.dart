@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/providers/habit_provider.dart';
+import '../core/providers/profile_provider.dart';
 import '../core/theme/app_theme.dart';
 import '../widgets/habit_card.dart';
 import '../widgets/floating_bottom_nav.dart';
@@ -67,6 +68,7 @@ class _HomeContent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final habits = ref.watch(habitProvider);
+    final profileAsync = ref.watch(profileProvider);
 
     return Container(
       decoration: const BoxDecoration(
@@ -86,10 +88,23 @@ class _HomeContent extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Hi, User',
-                      style: Theme.of(context).textTheme.displayLarge,
+                    // ========== PROFILE NAME ==========
+                    profileAsync.when(
+                      loading: () => Text(
+                        "Hi...",
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                      error: (err, stack) => Text(
+                        "Hi, User",
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                      data: (profile) => Text(
+                        "Hi, ${profile['name'] ?? 'User'}",
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
                     ),
+                    // ==================================
+
                     const SizedBox(height: 8),
                     const SizedBox(height: 30),
                     Row(
@@ -118,7 +133,7 @@ class _HomeContent extends ConsumerWidget {
                     ),
                     const SizedBox(height: 30),
                     Text(
-                      'Today\'s Habits',
+                      "Today's Habits",
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
                   ],
@@ -139,9 +154,10 @@ class _HomeContent extends ConsumerWidget {
                       const SizedBox(height: 16),
                       Text(
                         'No habits yet',
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color: AppTheme.grey,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyLarge
+                            ?.copyWith(color: AppTheme.grey),
                       ),
                       const SizedBox(height: 8),
                       Text(

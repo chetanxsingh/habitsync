@@ -84,7 +84,7 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    // Profile Name From Backend
+
                     profileAsync.when(
                       loading: () => Text("Loading...",
                           style: Theme.of(context).textTheme.displayMedium),
