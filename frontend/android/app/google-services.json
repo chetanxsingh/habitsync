@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "270049622434",
+    "project_id": "habitsync-96367",
+    "storage_bucket": "habitsync-96367.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270049622434:android:bf89da3cf3a0b01e2c1afb",
+        "android_client_info": {
+          "package_name": "com.example.habitsync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGYYlVS4slO50bJqlI80cV5F8GabH9zqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
