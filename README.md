@@ -42,8 +42,8 @@ The backend handles authentication, habit storage, analytics, and secure APIs.
 |--------------|-----------|--------------|
 | ![Splash](frontend/assets/Screenshots/splash.png) | ![Login](frontend/assets/Screenshots/login.png) | ![Singup](frontend/assets/Screenshots/singup.png) |
 
-| Home Screen | Add Habit | Statics Screen | Profile Screen |
-|--------------|-----------|--------------|
+| Home Screen | Add Habit | Statics Screen | Profile Screen|
+|--------------|-----------|--------------|--------------|
 | ![Home](frontend/assets/Screenshots/home.png) | ![Habits](frontend/assets/Screenshots/add.png) | ![Statics](frontend/assets/Screenshots/stats.png) | ![profile](frontend/assets/Screenshots/profile.png) |
 
 
